@@ -1,7 +1,7 @@
 /**
  * @name VoiceModeAnnounce
  * @author Froghut
- * @description Will audio announce whenever the vioce mode changes.
+ * @description When the user switches between voice activation and push-to-talk modes the plugin will announce the currently set mode via audio notification
  * @version 1.0.0
  * @source https://github.com/Froghut/BDPlugins/tree/main/VoiceModeAnnounce
  */
