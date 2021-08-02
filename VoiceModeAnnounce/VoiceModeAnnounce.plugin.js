@@ -2,7 +2,7 @@
  * @name VoiceModeAnnounce
  * @author Froghut
  * @description When the user switches between voice activation and push-to-talk modes the plugin will announce the currently set mode via audio notification
- * @version 1.0.0
+ * @version 1.1.0
  * @source https://github.com/Froghut/BDPlugins/tree/main/VoiceModeAnnounce
  */
 
@@ -38,12 +38,11 @@ module.exports = class VoiceModeAnnounce {
     }
 
     start() {
-        mode = BdApi.findModuleByProps("getEchoCancellation").getMode();
-        interval = setInterval(Check, 500);
-        Check();
+        mode = voiceSettings.getMode();
+        voiceSettings.addChangeListener(Check);
     }
     stop() {
-        clearInterval(interval);
+        voiceSettings.removeChangeListener(Check);
     }
 
     observer(changes) {}
